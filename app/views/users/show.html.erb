@@ -1,0 +1,19 @@
+<p><%= current_user.nickname.present? ? "#{current_user.nickname}" : "#{current_user.email}" %>さん</p>
+<h1>購入商品一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>商品名</th>
+      <th>値段</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%# @user.items.each do |item| %> <!-- users_controllerのshowを参照 -->
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.name %></td>
+          <td>¥<%= item.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
